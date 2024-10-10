@@ -1,3 +1,38 @@
+- How to set up and run the project locally.
+- Endpoints explanation.
+- Setup
+Prerequisites
+Python 3.7+
+MongoDB (Local or Atlas)
+Pip
+Installation
+Clone the Repository:
+
+python
+client = AsyncIOMotorClient("mongodb+srv://adityarai0132:aditya11@cluster0.6ir5k.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"")
+Running the Application
+Run the app locally:
+
+bash
+uvicorn main:app --reload
+App URL: http://127.0.0.1:8000
+Swagger UI: http://127.0.0.1:8000/docs
+API Endpoints
+Items API
+POST /items: Create a new item.
+GET /items/{id}: Retrieve an item by ID.
+GET /items/filter: Filter items by email, expiry date, insert date, or quantity.
+DELETE /items/{id}: Delete an item by ID.
+PUT /items/{id}: Update an item (except the insert date).
+Clock-In Records API
+POST /clock-in: Create a new clock-in entry.
+GET /clock-in/{id}: Retrieve a clock-in record by ID.
+GET /clock-in/filter: Filter clock-in records by email, location, or insert date.
+DELETE /clock-in/{id}: Delete a clock-in record by ID.
+PUT /clock-in/{id}: Update a clock-in record (except insert date).
+This should make it easy for anyone to set up, run, and use the application!
+
+
 **FastAPI Assignment Description:**
 As part of your assignment, you will be required to build a FastAPI application that performs CRUD (Create, Read, Update, Delete) operations for two entities: **Items** and **User Clock-In Records**. You will create a total of **8 APIs** using FastAPI, with specific requirements for GET APIs (including filter options and one MongoDB aggregation). Follow all FastAPI standards for API development, documentation, and error handling.
 
